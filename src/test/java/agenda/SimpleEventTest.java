@@ -1,14 +1,12 @@
 package agenda;
 
-import org.junit.jupiter.api.Test;
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 /**
  * Teste des événements simples, sans répétition
  */

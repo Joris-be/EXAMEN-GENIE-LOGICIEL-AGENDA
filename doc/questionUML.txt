@@ -1,2 +1,21 @@
 Ecrire ici votre réponse à la question UML.
 
+PREMIER UML :
+
+Avantages :
+Les concepts sont bien séparés (répétitions et terminaisons sont des classes distinctes).
+Plus flexible et facile à adapter pour des cas complexes: on peut faire évoluer un événement sans modifier sa classe.
+
+Inconvénients :
+Plus compliqué à comprendre et à programmer.
+Demande plus de gestion des relations entre les classes.
+
+DEUXIEME UML :
+
+Avantages :
+Plus simple, car tout est regroupé dans des sous-classes (RepetitiveEvent et FixedTerminationEvent).
+Plus rapide à mettre en place pour des projets simples.
+
+Inconvénients :
+Moins flexible si le projet devient plus complexe.
+Difficile à étendre pour ajouter de nouvelles fonctionnalités.

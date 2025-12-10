@@ -5,15 +5,15 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 
 public class Termination {
+    private LocalDate terminationDateInclusive;
+    private long numberOfOccurrences;
 
     public LocalDate terminationDateInclusive() {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        return terminationDateInclusive;
     }
 
     public long numberOfOccurrences() {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        return numberOfOccurrences;
     }
 
 
@@ -30,8 +30,11 @@ public class Termination {
      * @see ChronoUnit#between(Temporal, Temporal)
      */
     public Termination(LocalDate start, ChronoUnit frequency, LocalDate terminationInclusive) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        if (terminationInclusive == null) {
+            throw new IllegalArgumentException("La date de termination ne peut pas être nulle.");
+        }
+        this.terminationDateInclusive = terminationInclusive;
+        this.numberOfOccurrences = frequency.between(start, terminationInclusive) + 1;
     }
 
     /**
@@ -46,8 +49,11 @@ public class Termination {
      * @param numberOfOccurrences the number of occurrences of this repetitive event
      */
     public Termination(LocalDate start, ChronoUnit frequency, long numberOfOccurrences) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        if (numberOfOccurrences <= 0) {
+        throw new IllegalArgumentException("Le nombre d occurrences ne peut pas être négatif.");
+    }
+    this.numberOfOccurrences = numberOfOccurrences;
+    this.terminationDateInclusive = start.plus(numberOfOccurrences - 1, frequency);
     }
 
 }
